@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KLC DevOrg | Building Community Assets for Generational Transformation</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <style>
+    :root {
+      --primary-blue: #1e40af;
+      --primary-blue-dark: #1e3a8a;
+      --primary-green: #16a34a;
+      --primary-gold: #d97706;
+      --light-bg: #f8fafc;
+      --dark-text: #1e293b;
+      --medium-text: #475569;
+      --light-text: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --border-radius: 8px;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    
+    /* Navigation */
+    .navbar {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      background: rgba(255, 255, 255, 0.98);
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: var(--primary-blue) !important;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .navbar-brand img {
+      height: 40px;
+      width: auto;
+    }
+    
+    .navbar-nav .nav-link {
+      color: var(--dark-text) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      position: relative;
+      padding: 0.5rem 0 !important;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary-blue) !important;
+    }
+    
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary-blue);
+      border-radius: 2px;
+    }
+    
+    .navbar-toggler {
+      border: none;
+      font-size: 1.25rem;
+    }
+    
+    .btn-primary {
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-blue-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-outline-primary {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .btn-outline-primary:hover {
+      background: var(--primary-blue);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    
+    .btn-gold {
+      background: var(--primary-gold);
+      border-color: var(--primary-gold);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .btn-gold:hover {
+      background: #b45309;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(22, 163, 74, 0.85)), url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 10rem 0 6rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Section Styling */
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.25rem;
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary-gold);
+      border-radius: 3px;
+    }
+    
+    .section-title p {
+      color: var(--medium-text);
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      font-size: 1.1rem;
+    }
+    
+    /* Who We Are */
+    .who-we-are {
+      background: var(--light-bg);
+    }
+    
+    .who-we-are .content {
+      padding-right: 2rem;
+    }
+    
+    .who-we-are .image {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      height: 100%;
+      min-height: 400px;
+      background: url('images/about-us.jpg') center/cover no-repeat;
+    }
+    
+    /* Core Pillars */
+    .pillar-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      border-top: 4px solid var(--primary-blue);
+    }
+    
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .pillar-card i {
+      font-size: 2.5rem;
+      color: var(--primary-blue);
+      margin-bottom: 1.25rem;
+    }
+    
+    .pillar-card h4 {
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+    }
+    
+    /* Projects */
+    .project-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      transition: var(--transition);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .project-img {
+      height: 200px;
+      background: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 3rem;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-content h4 {
+      color: var(--primary-blue);
+      margin-bottom: 0.75rem;
+    }
+    
+    .progress {
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      margin: 1rem 0;
+    }
+    
+    .progress-bar {
+      background: var(--primary-green);
+      border-radius: 4px;
+    }
+    
+    /* Impact Counters */
+    .impact-section {
+      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+    
+    .impact-section .section-title h2 {
+      color: var(--white);
+    }
+    
+    .impact-section .section-title h2::after {
+      background: var(--primary-gold);
+    }
+    
+    .counter-item {
+      padding: 1.5rem;
+    }
+    
+    .counter-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .counter-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    /* Messages Section */
+    .message-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--primary-gold);
+    }
+    
+    .message-card h4 {
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .message-card h4 i {
+      color: var(--primary-gold);
+    }
+    
+    .message-author {
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-top: 1rem;
+      display: block;
+    }
+    
+    /* Departments */
+    .cluster-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+      border-left: 3px solid var(--primary-green);
+    }
+    
+    .cluster-card:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .cluster-card h5 {
+      color: var(--primary-blue);
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 200px;
+      background: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--medium-text);
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Contact */
+    .contact-info {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+    
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-info-item i {
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      min-width: 24px;
+      margin-top: 4px;
+    }
+    
+    .contact-form .form-control {
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-form .form-control:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark-text);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary-gold);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: var(--transition);
+      display: block;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-gold);
+      transform: translateX(3px);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 1.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--primary-blue);
+      transform: translateY(-3px);
+    }
+    
+    /* Page Navigation */
+    .page-section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .page-section.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 991px) {
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+      
+      .who-we-are .content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+      
+      .who-we-are .image {
+        min-height: 300px;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .hero {
+        padding: 8rem 0 4rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      section {
+        padding: 3.5rem 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.75rem;
+      }
+    }
+    
+    /* Utility Classes */
+    .text-primary-blue { color: var(--primary-blue) !important; }
+    .text-primary-green { color: var(--primary-green) !important; }
+    .text-primary-gold { color: var(--primary-gold) !important; }
+    .bg-light-custom { background: var(--light-bg) !important; }
+    .mb-4-custom { margin-bottom: 2.5rem !important; }
+    
+    .divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 2.5rem 0;
+    }
+    
+    .badge-gold {
+      background: var(--primary-gold);
+      color: var(--white);
+      padding: 0.35rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    /* Strategic Plan Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      height: calc(100% - 10px);
+      width: 2px;
+      background: var(--primary-blue);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.1rem;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-gold);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--primary-blue);
+    }
+    
+    .timeline-item h5 {
+      color: var(--primary-blue);
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Governance Org Chart Placeholder */
+    .org-chart {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    
+    .org-chart-placeholder {
+      background: var(--light-bg);
+      border-radius: var(--border-radius);
+      padding: 3rem 2rem;
+      margin: 1.5rem 0;
+      border: 2px dashed #cbd5e1;
+      color: var(--medium-text);
+    }
+    
+    /* Image Placeholders */
+    .img-placeholder {
+      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 600;
+      border-radius: var(--border-radius);
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--primary-blue);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--primary-blue-dark);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#" onclick="showPage('home')">
+        <i class="fas fa-building-columns"></i>
+        KLC DevOrg
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#" onclick="showPage('home')">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('about')">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('projects')">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('departments')">Departments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('impact')">Impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('gallery')">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('news')">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('involved')">Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary ms-lg-3" onclick="showPage('contact')">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <section id="home" class="page-section active">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="container">
+        <h1>Building Community Assets for Generational Transformation</h1>
+        <p>KLC DevOrg is a legally registered Company Limited by Guarantee committed to structured community development through education, health, infrastructure, and collective leadership.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-light btn-lg" onclick="showPage('about')">Learn About Us</a>
+          <a href="#" class="btn btn-gold btn-lg" onclick="showPage('projects')">Explore Our Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who We Are -->
+    <section class="who-we-are">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 content">
+            <h2 class="text-primary-blue mb-4">Who We Are</h2>
+            <p class="mb-4"><strong>KALIRO LORDS' COMMUNITY DEVELOPMENT ORGANISATION LTD (KLC DevOrg)</strong> is a structured community development institution founded to coordinate sustainable development initiatives across Kaliro and surrounding districts.</p>
+            <p class="mb-4">We operate under a governance framework that promotes transparency, accountability, and collective responsibility.</p>
+            <p>Our approach focuses on building real community assets that serve present and future generations.</p>
+            <a href="#" class="btn btn-outline-primary mt-4" onclick="showPage('about')">Read Our Full Story</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="image"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Pillars -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Core Pillars</h2>
+          <p>Four strategic focus areas driving sustainable community transformation</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="pillar-card">
+              <i class="fas fa-graduation-cap"></i>
+              <h4>Education & Training</h4>
+              <p>Promoting structured learning institutions and professional development initiatives.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="pillar-card">
+              <i class="fas fa-heartbeat"></i>
+              <h4>Health & Social Protection</h4>
+              <p>Establishing accessible health infrastructure to improve community wellbeing.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="pillar-card">
+              <i class="fas fa-building"></i>
+              <h4>Infrastructure Development</h4>
+              <p>Constructing sustainable community facilities that strengthen local capacity.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="pillar-card">
+              <i class="fas fa-users"></i>
+              <h4>Community Empowerment</h4>
+              <p>Mobilising members, leaders, and partners toward structured transformation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Highlights -->
+    <section class="bg-light-custom">
+      <div class="container">
+        <div class="section-title">
+          <h2>Current Project Highlights</h2>
+          <p>Transforming vision into tangible community assets</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="project-card">
+              <div class="project-img img-placeholder">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="project-content">
+                <h4>Community Offices & Hall</h4>
+                <p>A central administrative and training facility currently at advanced construction stage.</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">85% Complete</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project-card">
+              <div class="project-img img-placeholder">
+                <i class="fas fa-hospital"></i>
+              </div>
+              <div class="project-content">
+                <h4>Lords' Medical Centres</h4>
+                <p>A developing health infrastructure project aimed at increasing access to essential medical services.</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">65% Complete</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project-card">
+              <div class="project-img img-placeholder">
+                <i class="fas fa-school"></i>
+              </div>
+              <div class="project-content">
+                <h4>Future School Initiative</h4>
+                <p>Planned education institutions aligned with international academic standards.</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <small class="text-muted">Planning Phase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary" onclick="showPage('projects')">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Snapshot -->
+    <section class="impact-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Impact Snapshot</h2>
+          <p>Measurable progress toward generational transformation</p>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="counter-item">
+              <span class="counter-number" id="counter1">0</span>
+              <span class="counter-label">Structured Departments</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="counter-item">
+              <span class="counter-number" id="counter2">0</span>
+              <span class="counter-label">Districts Reached</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="counter-item">
+              <span class="counter-number" id="counter3">0</span>
+              <span class="counter-label">Projects Active</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="counter-item">
+              <span class="counter-number" id="counter4">0</span>
+              <span class="counter-label">Governance Bodies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Messages -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Leadership Messages</h2>
+          <p>Guiding our institutional vision with purpose and accountability</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="message-card">
+              <h4><i class="fas fa-user-tie"></i> Chairperson's Message</h4>
+              <p>Welcome to KALIRO LORDS' COMMUNITY DEVELOPMENT ORGANISATION LTD (KLC DevOrg). It is my honour to serve as Chairperson of an institution that was established with a clear purpose: to build sustainable community assets that uplift both present and future generations...</p>
+              <span class="message-author">Chairperson, KLC DevOrg</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="message-card">
+              <h4><i class="fas fa-user-graduate"></i> Executive Director's Message</h4>
+              <p>Welcome to the official platform of KLC DevOrg. Our organisation was founded on the conviction that communities thrive when development is structured, coordinated, and guided by accountable leadership. We do not pursue isolated activities; we pursue institutional growth...</p>
+              <span class="message-author">Executive Director & Founder, KLC DevOrg</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-outline-primary" onclick="showPage('about')">Read Full Messages</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-light-custom">
+      <div class="container text-center">
+        <h2 class="text-primary-blue mb-4">Join Us in Building Legacy</h2>
+        <p class="mb-4 fs-5">Together, we build structured community transformation. Your support creates generational impact.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="#" class="btn btn-primary" onclick="showPage('involved')">Become a Member</a>
+          <a href="#" class="btn btn-outline-primary" onclick="showPage('contact')">Partner With Us</a>
+          <a href="#" class="btn btn-gold">Download Profile <i class="fas fa-download ms-2"></i></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ABOUT PAGE -->
+  <section id="about" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>About KLC DevOrg</h2>
+        <p>Structured community development through accountable governance</p>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <h3 class="text-primary-blue mb-4">Our Story</h3>
+          <p class="mb-4">KLC DevOrg was established to provide a structured and accountable platform for community-driven development. Recognising the need for organised leadership and sustainable asset creation, the organisation was formed as a Company Limited by Guarantee to ensure institutional stability and continuity.</p>
+          <p>KLC DevOrg operates under a governance framework that promotes transparency, accountability, and collective responsibility. Our approach focuses on building real community assets that serve present and future generations.</p>
+        </div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <h3 class="text-primary-blue mb-4">Legal Status & Structure</h3>
+          <p class="mb-4"><strong>KLC DevOrg is formally incorporated as a Company Limited by Guarantee in Uganda.</strong></p>
+          <p>This legal framework ensures:</p>
+          <ul class="list-unstyled mb-4">
+            <li class="mb-2"><i class="fas fa-check-circle text-primary-green me-2"></i> Organisational continuity</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary-green me-2"></i> Transparent governance</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary-green me-2"></i> Structured decision-making</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary-green me-2"></i> Financial accountability</li>
+          </ul>
+          
+          <div class="org-chart">
+            <h5 class="text-primary-blue mb-3">Governance Structure</h5>
+            <div class="org-chart-placeholder">
+              <i class="fas fa-sitemap fa-3x mb-3 d-block text-primary-blue"></i>
+              <p class="mb-0">Board of Governors → Executive Director → 60 Departmental Lord Councillors</p>
+              <small class="text-muted d-block mt-2">Clusters: Education, Health, Infrastructure, Finance, Community Affairs, Administration & Legal</small>
+            </div>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Full Organogram</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="text-primary-blue mb-4">Vision, Mission & Values</h3>
+          
+          <div class="mb-4 p-3 bg-light rounded">
+            <h5 class="text-primary-blue"><i class="fas fa-eye me-2"></i> Vision</h5>
+            <p class="mb-0">To build sustainable community assets that transform lives and create generational impact.</p>
+          </div>
+          
+          <div class="mb-4 p-3 bg-light rounded">
+            <h5 class="text-primary-blue"><i class="fas fa-bullseye me-2"></i> Mission</h5>
+            <p class="mb-0">To coordinate, develop, and manage structured community initiatives in education, health, infrastructure, and empowerment through accountable governance and collective responsibility.</p>
+          </div>
+          
+          <h5 class="text-primary-blue mb-3"><i class="fas fa-heart me-2"></i> Core Values</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge-gold">Integrity</span>
+            <span class="badge-gold">Transparency</span>
+            <span class="badge-gold">Collective Responsibility</span>
+            <span class="badge-gold">Professionalism</span>
+            <span class="badge-gold">Sustainability</span>
+            <span class="badge-gold">Accountability</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h3 class="text-primary-blue text-center mb-4">Strategic Plan Summary (2026–2030)</h3>
+          <p class="text-center mb-4"><strong>Theme:</strong> Institutional Consolidation and Sustainable Asset Expansion</p>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <h5>Governance Strengthening</h5>
+              <p>Enhance Board oversight, implement reporting systems, develop policies, strengthen documentation.</p>
+            </div>
+            <div class="timeline-item">
+              <h5>Infrastructure Development</h5>
+              <p>Complete Community Offices & Hall, operationalise Lord's Health Centre, initiate School Project.</p>
+            </div>
+            <div class="timeline-item">
+              <h5>Education Development</h5>
+              <p>Finalise feasibility studies, develop curriculum, establish partnerships, construct facilities.</p>
+            </div>
+            <div class="timeline-item">
+              <h5>Health Service Expansion</h5>
+              <p>Equip health centre, recruit personnel, establish protocols, develop sustainability model.</p>
+            </div>
+            <div class="timeline-item">
+              <h5>Institutional Sustainability</h5>
+              <p>Diversify funding, strengthen engagement, enhance transparency, build operational reserves.</p>
+            </div>
+            <div class="timeline-item">
+              <h5>Community Engagement</h5>
+              <p>Strengthen communication, organise training forums, promote leadership development.</p>
+            </div>
+          </div>
+          
+          <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">Download Full Strategic Plan <i class="fas fa-download ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS PAGE -->
+  <section id="projects" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Our Projects</h2>
+        <p>Building tangible assets for sustainable community transformation</p>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-4 mb-4">
+          <div class="project-card">
+            <div class="project-img img-placeholder">
+              <i class="fas fa-building fa-3x"></i>
+            </div>
+            <div class="project-content">
+              <h4>Community Offices & Hall</h4>
+              <p class="mb-3"><strong>Purpose:</strong> To provide a permanent administrative headquarters and a functional training and community engagement facility.</p>
+              <p class="mb-3"><strong>Functions:</strong></p>
+              <ul class="small mb-3">
+                <li>Governance meetings</li>
+                <li>Training sessions</li>
+                <li>Community mobilization</li>
+                <li>Public engagement events</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small text-muted">Progress</span>
+                <span class="badge-gold">85% Complete</span>
+              </div>
+              <div class="progress mb-3">
+                <div class="progress-bar" style="width: 85%"></div>
+              </div>
+              <small class="text-muted d-block">Status: Construction at finishing stage</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="project-card">
+            <div class="project-img img-placeholder">
+              <i class="fas fa-hospital fa-3x"></i>
+            </div>
+            <div class="project-content">
+              <h4>Lords' Medical Centre</h4>
+              <p class="mb-3"><strong>Vision:</strong> To increase access to structured and reliable healthcare services.</p>
+              <p class="mb-3"><strong>Long-term objective:</strong> To operate a sustainable health facility serving members and the wider community.</p>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small text-muted">Progress</span>
+                <span class="badge-gold">65% Complete</span>
+              </div>
+              <div class="progress mb-3">
+                <div class="progress-bar" style="width: 65%"></div>
+              </div>
+              <small class="text-muted d-block">Status: Infrastructure construction ongoing</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="project-card">
+            <div class="project-img img-placeholder">
+              <i class="fas fa-school fa-3x"></i>
+            </div>
+            <div class="project-content">
+              <h4>Future School Project</h4>
+              <p class="mb-3"><strong>Objective:</strong> To establish modern educational institutions focused on structured academic excellence and community values.</p>
+              <p class="mb-3"><strong>Planned Features:</strong></p>
+              <ul class="small mb-3">
+                <li>Nursery, Primary, Secondary and higher learning</li>
+                <li>Professional teaching staff</li>
+                <li>Modern facilities</li>
+                <li>International academic standards alignment</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small text-muted">Progress</span>
+                <span class="badge-gold">Planning Phase</span>
+              </div>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-warning" style="width: 30%"></div>
+              </div>
+              <small class="text-muted d-block">Status: Feasibility and planning stage</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <h4 class="text-primary-blue mb-4">Project Management Approach</h4>
+        <p class="mb-4 col-lg-8 mx-auto">All projects follow structured governance, transparent reporting, and community engagement protocols to ensure accountability and sustainable impact.</p>
+        <a href="#" class="btn btn-outline-primary">View Project Reports</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS PAGE -->
+  <section id="departments" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Our Departments</h2>
+        <p>60 structured departments grouped into functional clusters for effective coordination</p>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="mb-4 fs-5">KLC DevOrg operates through 60 structured departments grouped into functional clusters. These departments ensure decentralised coordination, structured leadership, effective communication, and accountability across sectors.</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="cluster-card">
+            <h5><i class="fas fa-graduation-cap me-2"></i> Education & Training</h5>
+            <p class="small mb-0">Curriculum development, teacher training, institutional partnerships, student support programs.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="cluster-card">
+            <h5><i class="fas fa-heartbeat me-2"></i> Health & Social Services</h5>
+            <p class="small mb-0">Health infrastructure, medical personnel coordination, community health programs, social protection.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="cluster-card">
+            <h5><i class="fas fa-hard-hat me-2"></i> Infrastructure & Projects</h5>
+            <p class="small mb-0">Construction oversight, facility management, technical planning, quality assurance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="cluster-card">
+            <h5><i class="fas fa-chart-line me-2"></i> Finance & Planning</h5>
+            <p class="small mb-0">Budget management, financial reporting, strategic planning, resource mobilization.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="cluster-card">
+            <h5><i class="fas fa-users me-2"></i> Community Affairs</h5>
+            <p class="small mb-0">Member mobilization, community engagement, leadership development, cultural preservation.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="cluster-card">
+            <h5><i class="fas fa-gavel me-2"></i> Administration & Legal</h5>
+            <p class="small mb-0">Governance support, compliance, documentation, policy development, legal affairs.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <h4 class="text-primary-blue mb-3">Departmental Leadership</h4>
+        <p class="mb-4 col-lg-7 mx-auto">Each department is led by a Lord Councillor who reports to cluster coordinators and the Executive Director, ensuring clear accountability lines and effective implementation.</p>
+        <a href="#" class="btn btn-outline-primary">Download Department Structure</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT PAGE -->
+  <section id="impact" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Impact & Reports</h2>
+        <p>Transparency and accountability through measurable results</p>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="mb-4 fs-5">KLC DevOrg is committed to transparency and accountability. This section provides access to institutional reports that demonstrate our progress and commitment to community impact.</p>
+        </div>
+      </div>
+      
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="fas fa-file-pdf fa-3x text-primary-blue mb-3"></i>
+              <h5 class="card-title text-primary-blue">Annual Reports</h5>
+              <p class="card-text small">Comprehensive yearly summaries of activities, financial performance, and impact metrics.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Reports</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="fas fa-tasks fa-3x text-primary-green mb-3"></i>
+              <h5 class="card-title text-primary-blue">Strategic Plans</h5>
+              <p class="card-text small">Detailed frameworks outlining our 3-5 year strategic direction and implementation roadmaps.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Plans</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="fas fa-hard-hat fa-3x text-primary-gold mb-3"></i>
+              <h5 class="card-title text-primary-blue">Construction Reports</h5>
+              <p class="card-text small">Progress updates, photo documentation, and quality assurance reports for infrastructure projects.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Updates</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="fas fa-balance-scale fa-3x text-primary-blue mb-3"></i>
+              <h5 class="card-title text-primary-blue">Governance Updates</h5>
+              <p class="card-text small">Board decisions, policy developments, and governance framework enhancements.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Updates</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="fas fa-chart-pie fa-3x text-primary-green mb-3"></i>
+              <h5 class="card-title text-primary-blue">Financial Summaries</h5>
+              <p class="card-text small">Audited financial statements, budget allocations, and resource utilization reports.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Summaries</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="fas fa-users fa-3x text-primary-gold mb-3"></i>
+              <h5 class="card-title text-primary-blue">Community Impact</h5>
+              <p class="card-text small">Stories, testimonials, and data demonstrating tangible community transformation.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Impact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <div class="alert alert-light border d-inline-block">
+          <i class="fas fa-info-circle me-2"></i>
+          <strong>Transparency Commitment:</strong> All reports are prepared in accordance with Ugandan regulatory requirements and international best practices for non-profit governance.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PAGE -->
+  <section id="gallery" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Project Gallery</h2>
+        <p>Visual documentation of our institutional growth and community impact</p>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <div class="btn-group flex-wrap" role="group">
+            <button type="button" class="btn btn-outline-primary active">All</button>
+            <button type="button" class="btn btn-outline-primary">Infrastructure</button>
+            <button type="button" class="btn btn-outline-primary">Events</button>
+            <button type="button" class="btn btn-outline-primary">Training</button>
+            <button type="button" class="btn btn-outline-primary">Leadership</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item img-placeholder">Community Offices Construction</div>
+        <div class="gallery-item img-placeholder">Medical Centre Groundbreaking</div>
+        <div class="gallery-item img-placeholder">Leadership Retreat 2025</div>
+        <div class="gallery-item img-placeholder">Community Training Session</div>
+        <div class="gallery-item img-placeholder">Board Meeting</div>
+        <div class="gallery-item img-placeholder">Infrastructure Planning Workshop</div>
+        <div class="gallery-item img-placeholder">Member Engagement Forum</div>
+        <div class="gallery-item img-placeholder">Strategic Planning Session</div>
+        <div class="gallery-item img-placeholder">Health Centre Progress</div>
+        <div class="gallery-item img-placeholder">Education Initiative Launch</div>
+        <div class="gallery-item img-placeholder">Community Celebration</div>
+        <div class="gallery-item img-placeholder">Partnership Signing</div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <p class="mb-4">All images reflect real progress and institutional growth. High-resolution versions available for partners and media upon request.</p>
+        <a href="#" class="btn btn-outline-primary">Request Media Kit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS PAGE -->
+  <section id="news" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>News & Updates</h2>
+        <p>Stay informed about our latest developments and community milestones</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8">
+          <article class="mb-5 pb-4 border-bottom">
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge-gold me-3">Project Update</span>
+              <small class="text-muted"><i class="far fa-calendar me-1"></i> February 15, 2026</small>
+            </div>
+            <h3 class="text-primary-blue mb-3">Community Offices & Hall Nearing Completion</h3>
+            <p class="mb-3">Construction of our central administrative and training facility has reached 85% completion. The facility will serve as the hub for governance meetings, training sessions, community mobilization, and public engagement events.</p>
+            <p class="mb-3">Key milestones achieved this quarter include roofing completion, electrical installations, and interior finishing preparations. The project remains on schedule for commissioning in Q3 2026.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary">Read Full Update</a>
+          </article>
+          
+          <article class="mb-5 pb-4 border-bottom">
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge-gold me-3">Leadership</span>
+              <small class="text-muted"><i class="far fa-calendar me-1"></i> February 10, 2026</small>
+            </div>
+            <h3 class="text-primary-blue mb-3">Board of Governors Approves 2026 Strategic Priorities</h3>
+            <p class="mb-3">The Board of Governors convened for its quarterly meeting and approved key strategic priorities for 2026, focusing on governance consolidation, infrastructure completion, and education project advancement.</p>
+            <p class="mb-3">The meeting also reviewed financial reports, project timelines, and community engagement strategies to ensure alignment with our mission of building sustainable community assets.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary">Read Full Update</a>
+          </article>
+          
+          <article class="mb-5">
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge-gold me-3">Partnership</span>
+              <small class="text-muted"><i class="far fa-calendar me-1"></i> January 28, 2026</small>
+            </div>
+            <h3 class="text-primary-blue mb-3">New Partnership to Advance Health Infrastructure</h3>
+            <p class="mb-3">KLC DevOrg has entered a strategic partnership with [Partner Name] to accelerate the development of the Lord's Health Centre. This collaboration will enhance medical equipment procurement, staff training, and service delivery protocols.</p>
+            <p class="mb-3">The partnership aligns with our strategic objective of operationalising sustainable health facilities that serve members and surrounding communities.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary">Read Full Update</a>
+          </article>
+          
+          <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <h5 class="card-title text-primary-blue mb-3">Subscribe to Updates</h5>
+              <p class="card-text small mb-3">Receive project updates, announcements, and reports directly to your inbox.</p>
+              <form>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Your email address">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary-blue mb-3">Categories</h5>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="#" class="text-decoration-none text-dark">Project Updates <span class="badge bg-light text-dark ms-2">12</span></a></li>
+                <li class="mb-2"><a href="#" class="text-decoration-none text-dark">Leadership Communications <span class="badge bg-light text-dark ms-2">8</span></a></li>
+                <li class="mb-2"><a href="#" class="text-decoration-none text-dark">Event Summaries <span class="badge bg-light text-dark ms-2">15</span></a></li>
+                <li class="mb-2"><a href="#" class="text-decoration-none text-dark">Development Milestones <span class="badge bg-light text-dark ms-2">6</span></a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Partnership Announcements <span class="badge bg-light text-dark ms-2">4</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED PAGE -->
+  <section id="involved" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Get Involved</h2>
+        <p>Join us in building structured community transformation</p>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="mb-4 fs-5">You can support KLC DevOrg's mission through multiple engagement pathways. Together, we build institutional legacy and generational impact.</p>
+        </div>
+      </div>
+      
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <i class="fas fa-user-plus fa-3x text-primary-blue mb-3"></i>
+            <h5 class="card-title text-primary-blue">Become a Member</h5>
+            <p class="card-text small">Join our community of change-makers. Members participate in governance, contribute to decision-making, and help shape our development priorities.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Learn More</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <i class="fas fa-handshake fa-3x text-primary-green mb-3"></i>
+            <h5 class="card-title text-primary-blue">Partner With Us</h5>
+            <p class="card-text small">Organizations can collaborate on specific projects, provide technical expertise, or support capacity building initiatives aligned with our strategic pillars.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Explore Partnerships</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <i class="fas fa-heart fa-3x text-primary-gold mb-3"></i>
+            <h5 class="card-title text-primary-blue">Support Projects</h5>
+            <p class="card-text small">Contribute to specific infrastructure, education, or health initiatives. Your support directly funds tangible community assets with measurable impact.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto">View Projects</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <i class="fas fa-laptop-code fa-3x text-primary-blue mb-3"></i>
+            <h5 class="card-title text-primary-blue">Volunteer Expertise</h5>
+            <p class="card-text small">Share your professional skills in education, health, engineering, finance, or administration to strengthen our institutional capacity.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Volunteer</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="text-primary-blue text-center mb-4">Partnership Proposal Process</h3>
+              <div class="row text-center">
+                <div class="col-md-3 mb-3 mb-md-0">
+                  <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                    <span class="fw-bold text-primary-blue">1</span>
+                  </div>
+                  <h6>Initial Inquiry</h6>
+                  <p class="small mb-0">Submit your interest via contact form</p>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                  <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                    <span class="fw-bold text-primary-blue">2</span>
+                  </div>
+                  <h6>Proposal Development</h6>
+                  <p class="small mb-0">Collaborate on project scope and objectives</p>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                  <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                    <span class="fw-bold text-primary-blue">3</span>
+                  </div>
+                  <h6>Review & Approval</h6>
+                  <p class="small mb-0">Board evaluation and strategic alignment</p>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                    <span class="fw-bold text-primary-blue">4</span>
+                  </div>
+                  <h6>Implementation</h6>
+                  <p class="small mb-0">Joint execution with transparent reporting</p>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">Download Partnership Template</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PAGE -->
+  <section id="contact" class="page-section">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Reach out to learn more about our work or explore collaboration opportunities</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <div class="contact-info">
+            <h4 class="text-primary-blue mb-4">Get in Touch</h4>
+            
+            <div class="contact-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h6 class="mb-1">Head Office</h6>
+                <p class="mb-0 small">Kaliro District, Uganda</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h6 class="mb-1">Official Email</h6>
+                <p class="mb-0 small">Kalirolordscommunity@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h6 class="mb-1">Phone</h6>
+                <p class="mb-0 small">+256 775 638 646</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h6 class="mb-1">Office Hours</h6>
+                <p class="mb-0 small">Monday - Friday: 8:00 AM - 5:00 PM EAT</p>
+              </div>
+            </div>
+            
+            <div class="mt-4 pt-3 border-top">
+              <h6 class="text-primary-blue mb-3">Follow Us</h6>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <h4 class="text-primary-blue mb-4">Send us a Message</h4>
+              <form class="contact-form">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name *" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email *" required>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Subject *">
+                </div>
+                <div class="mb-3">
+                  <select class="form-select">
+                    <option selected>Inquiry Type</option>
+                    <option>General Information</option>
+                    <option>Partnership Opportunity</option>
+                    <option>Project Support</option>
+                    <option>Media Request</option>
+                    <option>Volunteer Inquiry</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <textarea class="form-control" rows="5" placeholder="Your Message *" required></textarea>
+                </div>
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                  <label class="form-check-label small" for="privacyCheck">
+                    I agree to the <a href="#" class="text-primary-blue">Privacy Policy</a> and consent to KLC DevOrg contacting me regarding my inquiry.
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">KLC DevOrg</h5>
+          <p class="small mb-3">KALIRO LORDS' COMMUNITY DEVELOPMENT ORGANISATION LTD<br>Company Limited by Guarantee</p>
+          <p class="small mb-3">Building Community Assets for Generational Transformation.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About Us</a></li>
+            <li><a href="#" onclick="showPage('projects')">Our Projects</a></li>
+            <li><a href="#" onclick="showPage('departments')">Departments</a></li>
+            <li><a href="#" onclick="showPage('impact')">Impact & Reports</a></li>
+            <li><a href="#" onclick="showPage('news')">News & Updates</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Our Focus Areas</h5>
+          <ul class="footer-links">
+            <li><a href="#">Education & Training</a></li>
+            <li><a href="#">Health & Social Protection</a></li>
+            <li><a href="#">Infrastructure Development</a></li>
+            <li><a href="#">Community Empowerment</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Contact</h5>
+          <ul class="footer-links small">
+            <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Kaliro District, Uganda</li>
+            <li class="mb-2"><i class="fas fa-phone me-2"></i> +256 775 638 646</li>
+            <li class="mb-2"><i class="fas fa-envelope me-2"></i> Kalirolordscommunity@gmail.com</li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Governance</h5>
+          <ul class="footer-links">
+            <li><a href="#">Legal Status</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#" onclick="showPage('impact')">Transparency & Reports</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="mb-0">© 2026 KALIRO LORDS' COMMUNITY DEVELOPMENT ORGANISATION LTD. All Rights Reserved.</p>
+        <p class="mb-0 small mt-1">Designed for institutional transparency and accountability.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    // Page Navigation System
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show requested page
+      document.getElementById(pageId).classList.add('active');
+      
+      // Update active nav link
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+      
+      // Close mobile menu if open
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        bsCollapse.hide();
+      }
+    }
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      
+      // Back to top button visibility
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    
+    // Impact Counter Animation
+    function animateCounter(element, target, duration) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      
+      function updateCounter() {
+        start += increment;
+        if (start < target) {
+          element.textContent = Math.floor(start);
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target;
+        }
+      }
+      
+      updateCounter();
+    }
+    
+    // Initialize counters when impact section is visible
+    const observerOptions = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(document.getElementById('counter1'), 60, 2000);
+          animateCounter(document.getElementById('counter2'), 5, 2000);
+          animateCounter(document.getElementById('counter3'), 3, 2000);
+          animateCounter(document.getElementById('counter4'), 7, 2000);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe impact section
+    const impactSection = document.querySelector('.impact-section');
+    if (impactSection) {
+      observer.observe(impactSection);
+    }
+    
+    // Form submission handling
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will respond to your inquiry shortly.');
+        this.reset();
+      });
+    });
+    
+    // Back to top functionality
+    document.getElementById('backToTop').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Initialize: Set home page as active on load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set initial active nav link
+      document.querySelector('.navbar-nav .nav-link').classList.add('active');
+    });
+  </script>
+</body>
+</html>
